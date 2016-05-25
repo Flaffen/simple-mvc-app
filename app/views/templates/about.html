@@ -7,9 +7,13 @@
 <body>
 	<p>
 	{% for item in text %}
-	{% for i in item %}
-	{{ i }}
-	{% endfor %}
+	ID: {{ item.id }}
+	<br>
+	Login: {{ item.login }}
+	<br>
+	Password: {{ item.password }}
+	<br>
+	Email: {{ item.email }}
 	<br>
 	{% endfor %}
 	</p>
