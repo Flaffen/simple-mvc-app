@@ -1,24 +1,25 @@
 <?php
 namespace Helicopter\Models;
 
-use Illuminate\Database\Capsule\Manager as Capsule;
-use Helicopter\Core\Model;
+use Helicopter\Core\DB;
 
-class Users extends Model
+class Users extends DB
 {
 	public function getAll()
 	{
-		// return $this->capsule->table('users')->get();
-		return Capsule::select('select * from users where id = ?', array(1));
+		return self::table('users')->get();
+	}
 
-		// $stmt = $this->pdo->query('SELECT * FROM users');
-		// $rs = array();
+	public function getAdmin()
+	{
+		return self::table('users')->where('login', 'admin')->get();
+	}
 
-		// while ($row = $stmt->fetch())
-		// {
-		// 	$rs[] = $row;
-		// }
+	public function auth($login, $password)
+	{
+		if (empty(DB::table('users')->where('login', $login)->get())) return false;
+		if (empty(DB::table('users')->where('password', $password)->get())) return false;
 
-		// return $rs;
+		return true;
 	}
 }

@@ -8,15 +8,14 @@ class AboutController extends Controller
 {
 	public function indexAction()
 	{
-		echo $this->twig->render('about.html', array('title' => 'about', 'text' => 'about page'));
+		view($this->twig, 'templates/about', array('text' => 'test'));
 	}
 
 	public function otherAction()
 	{
-		$UsersModel = new Users();
-
-		$text = $UsersModel->getAll();
-
-		echo $this->twig->render('about.html', array('title' => 'other', 'text' => $text));
+		$text = 'Hello, World!';
+		d($text);
+		//echo $this->twig->render('about.html', array('title' => 'other', 'text' => $text));
+		view($this->twig, 'about.html', array('title' => 'other', 'text' => $text));
 	}
 }

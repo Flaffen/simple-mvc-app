@@ -5,15 +5,18 @@ use Helicopter\Core\Controller;
 use Helicopter\Models\Articles;
 use Helicopter\Models\Categories;
 
-class IndexController extends Controller
+class CategoryController extends Controller
 {
 	public function indexAction()
 	{
+		$id = $_GET['id'];
+
 		$articles = new Articles();
 		$cats = new Categories();
 
-		$categories = $cats->getAll();
-		$news = $articles->getAll();
-		view($this->twig, 'index', array('news' => $news, 'categories' => $categories));
+		$category = $cats->getCatById($id);
+		$news = $articles->getArticlesByCatId($id);
+
+		view($this->twig, 'category', array('category' => $category, 'news' => $news));
 	}
 }

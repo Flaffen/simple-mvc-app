@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home page</title>
+</head>
+<body>
+	<a href="/adminpanel">Панель администратора</a>
+	<h1>Articles:</h1>
+	<br>
+	{% for category in categories %}
+	<a href="{{ base_url() }}category/{{ category.ID }}">{{ category.name }}</a>
+	{% endfor %}
+
+	{% for new in news %}
+		<div style="border: 1px solid black;">
+			<h2>{{ new.title }}</h2>
+			<p>{{ new.text }}</p>
+			<b>{{ new.category_id }}</b>
+			<a href="{{ base_url() }}view/{{ new.ID }}">Прочитать полностью</a>
+		</div>
+		<br>
+	{% endfor %}
+</body>
+</html>
