@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Articles</title>
+</head>
+<body>
+	{% for article in articles %}
+		<div style="border: 1px solid black;">
+			<h1>{{ article.title }}</h1>
+			<p>{{ article.text }}</p>
+			<b>{{ article.category_name }}</b>
+			<a href="{{ base_url() }}editArticle/edit/{{ article.ID }}">Редактировать</a>
+		</div>
+	{% endfor %}
+</body>
+</html>

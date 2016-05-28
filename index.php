@@ -9,12 +9,3 @@ $class = 'Helicopter\Controllers\\' . $controllerName;
 $controller = new $class($twig);
 
 $controller->$actionName();
-
-// if (method_exists($controller, $actionName))
-// {
-// 	$controller->$actionName();
-// }
-// else
-// {
-// 	view($twig, '404');
-// }

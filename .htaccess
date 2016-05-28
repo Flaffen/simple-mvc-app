@@ -2,9 +2,12 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteRule .* index.php [L]
+RewriteRule ^admin-dashboard/([a-z]+)/?$ index.php?controller=AdminDashboard&action=$1
+RewriteRule ^admin-dashboard/?$ index.php?controller=AdminDashboard
 RewriteRule ^category/([0-9]+)/?$ index.php?controller=category&action=index&id=$1
 RewriteRule ^view/([0-9]+)/?$ index.php?controller=view&action=index&id=$1
 RewriteRule ^([a-z]+)/?$ index.php?controller=$1 [NC,L] # Handle an URL
 RewriteRule ^([a-z]+)/([a-z]+)/?$ index.php?controller=$1&action=$2 [NC,L]
+RewriteRule ^([a-z]+)/([a-z]+)/([0-9]+)?$ index.php?controller=$1&action=$2&id=$3 [NC,L]
 
 ErrorDocument 404 /app/views/404.html

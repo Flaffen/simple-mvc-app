@@ -2,7 +2,7 @@
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\Controller;
-use Helicopter\Models\Users;
+use Helicopter\Models\Admins;
 
 class AuthController extends Controller
 {
@@ -12,7 +12,7 @@ class AuthController extends Controller
 
 		if (isset($_SESSION['login']))
 		{
-			redirect('adminpanel');
+			redirect('admin-dashboard');
 		}
 	}
 
@@ -20,15 +20,15 @@ class AuthController extends Controller
 	{
 		if (isset($_POST['login']) && isset($_POST['password']))
 		{
-			$users = new Users();
+			$admins = new Admins();
 
-			$rs = $users->auth($_POST['login'], $_POST['password']);
+			$rs = $admins->auth($_POST['login'], $_POST['password']);
 
 			if ($rs)	
 			{
 				$_SESSION['logged'] = 1;
 				
-				redirect('adminpanel');
+				redirect('admin-dashboard');
 			}
 			else
 			{

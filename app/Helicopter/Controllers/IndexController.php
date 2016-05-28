@@ -12,7 +12,8 @@ class IndexController extends Controller
 		$articles = new Articles();
 		$cats = new Categories();
 
-		$categories = $cats->getAll();
+		$categories = $cats->getAllMainCatsWithChildren();
+
 		$news = $articles->getAll();
 		view($this->twig, 'index', array('news' => $news, 'categories' => $categories));
 	}

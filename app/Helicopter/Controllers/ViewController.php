@@ -14,6 +14,6 @@ class ViewController extends Controller
 
 		$new = $articles->getArticleById($id);
 
-		view($this->twig, 'templates/single', array('new' => $new));
+		view($this->twig, 'single', array('new' => $new));
 	}
 }

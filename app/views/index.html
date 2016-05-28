@@ -5,18 +5,29 @@
 	<title>Home page</title>
 </head>
 <body>
-	<a href="/adminpanel">Панель администратора</a>
+	<a href="/admin-dashboard">Панель администратора</a>
 	<h1>Articles:</h1>
 	<br>
-	{% for category in categories %}
-	<a href="{{ base_url() }}category/{{ category.ID }}">{{ category.name }}</a>
-	{% endfor %}
+	<ul>
+		{% for category in categories %}
+			<li>
+				<a href="{{ base_url() }}category/{{ category.ID }}">{{ category.name }}</a>
+				{% if category.childs %}
+					<ul>
+						{% for child in category.childs %}
+							<li><a href="{{ base_url() }}category/{{ child.ID }}">{{ child.name }}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
 
 	{% for new in news %}
 		<div style="border: 1px solid black;">
 			<h2>{{ new.title }}</h2>
 			<p>{{ new.text }}</p>
-			<b>{{ new.category_id }}</b>
+			<b>{{ new.category_name }}</b>
 			<a href="{{ base_url() }}view/{{ new.ID }}">Прочитать полностью</a>
 		</div>
 		<br>
