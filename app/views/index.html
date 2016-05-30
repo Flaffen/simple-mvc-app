@@ -21,6 +21,13 @@
 							{% for child1 in child.childs %}
 								<li>
 									<a href="{{ base_url() }}category/{{ child1.ID }}">{{ child1.name }}</a>
+									<ul>
+										{% for child2 in child1.childs %}
+											<li>
+												<a href="{{ base_url() }}category/{{ child2.ID }}">{{ child2.name }}</a>
+											</li>
+										{% endfor %}
+									</ul>
 								</li>
 							{% endfor %}
 						</ul>
@@ -36,7 +43,7 @@
 		<div style="border: 1px solid black;">
 			<h2>{{ new.title }}</h2>
 			<p>{{ new.text }}</p>
-			<b>{{ new.category_name }}</b>
+			<b><a href="{{ base_url() }}category/{{ new.category_id }}">{{ new.category_name }}</a></b>
 			<a href="{{ base_url() }}view/{{ new.ID }}">Прочитать полностью</a>
 		</div>
 		<br>
