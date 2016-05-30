@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер страницы аутентификации
+ *
+ */
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\Controller;

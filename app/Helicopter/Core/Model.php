@@ -1,4 +1,8 @@
 <?php
+/**
+ * Родительский класс для всех Моделей
+ *
+ */
 namespace Helicopter\Core;
 
 use Illuminate\Database\Capsule\Manager as Capsule;

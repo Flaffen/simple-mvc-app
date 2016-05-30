@@ -10,16 +10,25 @@
 	<br>
 	<ul>
 		{% for category in categories %}
+			
 			<li>
 				<a href="{{ base_url() }}category/{{ category.ID }}">{{ category.name }}</a>
-				{% if category.childs %}
-					<ul>
-						{% for child in category.childs %}
-							<li><a href="{{ base_url() }}category/{{ child.ID }}">{{ child.name }}</a></li>
-						{% endfor %}
-					</ul>
-				{% endif %}
+				<ul>
+				{% for child in category.childs %}
+					<li>
+						<a href="{{ base_url() }}category/{{ child.ID }}">{{ child.name }}</a>
+						<ul>
+							{% for child1 in child.childs %}
+								<li>
+									<a href="{{ base_url() }}category/{{ child1.ID }}">{{ child1.name }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</li>
+				{% endfor %}
+				</ul>
 			</li>
+			
 		{% endfor %}
 	</ul>
 

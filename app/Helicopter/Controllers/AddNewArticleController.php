@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер для добавления новой статьи.
+ * 
+ */
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\AdminPanelController;
@@ -11,7 +16,8 @@ class AddNewArticleController extends AdminPanelController
 	{
 		$cats = new Categories();
 		$categories = $cats->getAll();
-
+		
+		// Если поля не были заполнены, отображать форму заполения полей. Иначе вызвать функцию добавления статьи.
 		if (!isset($_POST['title']) && !isset($_POST['text']))
 		{
 			view($this->twig, 'admin-panel/add-new-post', array('categories' => $categories));

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit {{ category.name }}</title>
+</head>
+<body>
+	<form method="post">
+        <input type="text" name="name" value="{{ category.name }}">
+        <select name="parent-category-id">
+            {% for item in categories %}
+				<option value={{ item.ID }}>{{ item.name }}</option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit" value="Изменить">
+    </form>
+</body>
+</html>

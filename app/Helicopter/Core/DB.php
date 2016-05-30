@@ -1,8 +1,14 @@
 <?php
+/**
+ * Главный класс для работы с базой данных
+ *
+ */
+
 namespace Helicopter\Core;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+// Инициализация Eloquent ORM.
 $capsule = new Capsule;
 
 $capsule->addConnection([

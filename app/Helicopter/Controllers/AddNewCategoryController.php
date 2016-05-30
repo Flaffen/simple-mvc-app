@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер страницы добавления новой категории.
+ *
+ */
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\AdminPanelController;

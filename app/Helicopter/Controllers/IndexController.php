@@ -1,4 +1,10 @@
 <?php
+/**
+ * Контроллер главной страницы сайта
+ * 
+ */ 
+
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\Controller;
