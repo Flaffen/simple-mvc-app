@@ -4,6 +4,18 @@
     <title>Admin Settings</title>
 </head>
 <body>
-    <h1>Welcome to Admin Settings!</h1>
+    <h1>Настройки для {{ admin.nice_name }}</h1>
+    
+    Поменять пароль
+    <form method="post">
+        <label for="old-password">Старый пароль:</label>
+        <input type="password" name="old-password" id="old-password">
+        <br>
+        <label for="new-password">Новый пароль:</label>
+        <input type="password" name="new-password" id="new-password">
+        <br>
+        <br>
+        <input type="submit" value="Поменять пароль">
+    </form>
 </body>
 </html>

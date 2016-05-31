@@ -17,4 +17,17 @@ class Admins extends DB
 
 		return true;
 	}
+	
+	public function updatePassword($oldPass, $newPass)
+	{
+		$dbPass = self::table('admins')->select('password')->where('login', 'admin')->first()->password;
+		
+		if ($oldPass !== $dbPass) return false;
+		
+		self::table('admins')->where('password', $dbPass)->update([
+			'password' => $newPass														  
+		]);
+		
+		return true;
+	}
 }
