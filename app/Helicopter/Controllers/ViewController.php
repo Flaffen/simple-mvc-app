@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер просмотра отдельной статьи.
+ *
+*/
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\Controller;

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер страницы категории.
+ *
+*/
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\Controller;

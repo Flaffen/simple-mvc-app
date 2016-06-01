@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер удаления статьи и категории.
+ *
+*/
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\AdminPanelController;

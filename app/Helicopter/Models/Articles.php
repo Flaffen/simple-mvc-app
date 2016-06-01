@@ -65,11 +65,23 @@ class Articles extends DB
 		return true;
 	}
 	
+	/**
+	 * Удаление статьи по её идентификатору.
+	 *
+	 * @param integer $id Идентификатор категории.
+	 */
 	public function deleteArticleById($id)
 	{
 		self::table('articles')->where('id', $id)->delete();
 	}
 	
+	/**
+	 * Обновление полей статьи.
+	 *
+	 * @param integer $articleId Идентификатор обновляемой статьи.
+	 * @param string $title Новый заголовок.
+	 * @param string $text Новое содержимое статьи.
+	 */
 	public function updateArticle($articleId, $title, $text)
 	{
 		self::table('articles')->where('id', $articleId)->update([

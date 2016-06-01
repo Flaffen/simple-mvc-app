@@ -1,4 +1,9 @@
 <?php
+/**
+ * Контроллер настроек администратора.
+ *
+*/
+
 namespace Helicopter\Controllers;
 
 use Helicopter\Core\AdminPanelController;

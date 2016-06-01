@@ -37,7 +37,7 @@ class AuthController extends Controller
 			}
 			else
 			{
-				view($this->twig, 'form');
+				redirect('auth');
 			}
 		}
 		else

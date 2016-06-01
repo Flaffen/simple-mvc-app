@@ -28,6 +28,10 @@ class AddNewArticleController extends AdminPanelController
 		}
 	}
 
+	/**
+	 * Добавление статьи.
+	 *
+	 */
 	public function addNewArticleAction()
 	{
 		$articles = new Articles();
